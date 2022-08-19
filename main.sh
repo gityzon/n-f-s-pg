@@ -16,7 +16,7 @@ chmod 777 ~/nginx/sbin/nginx
 
 if [ ! -f "install-complete.sh" ];then
 #
-sh synapse-install.sh
+sh ~/${REPL_SLUG}\/synapse-install.sh
 #
 mkdir -p ~/${REPL_SLUG}\/web/
 #
