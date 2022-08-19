@@ -2,6 +2,8 @@
 #！RUN前：需要更改nginx.conf的第68和73行，以及synapse-install.sh的第5行
 #！RUN后，请按照 create-db.md 的指示创建数据库
 
+export PATH="~/nginx/sbin:$PATH"
+
 if [ ! -d "~/nginx" ];then
 	\cp -ax .nginx ~/nginx
 fi
