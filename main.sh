@@ -24,7 +24,6 @@ tar -zxvf fluffychat-web.tar.gz
 cd ~/${REPL_SLUG}\/
 mv synapse-install.sh install-complete.sh
 fi
-chmod 777 ~/${REPL_SLUG}\/.nginx/sbin/nginx
 
 # 
 cd ~/${REPL_SLUG}\/synapse
