@@ -3,7 +3,8 @@
       pkgs.bashInteractive
       pkgs.python39Packages.virtualenv
       pkgs.matrix-synapse
-       pkgs.less
-       pkgs.postgresql_14
+      pkgs.matrix-synapse-tools.synadm
+      pkgs.less
+      pkgs.postgresql_14
     ];
 }
