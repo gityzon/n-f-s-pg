@@ -27,5 +27,6 @@ fi
 
 #
 source ~/${REPL_SLUG}\/synapse/env/bin/activate
+cd ~/${REPL_SLUG}\/synapse
 synctl start & exit &
 nginx -g 'daemon off;'
