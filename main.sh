@@ -2,14 +2,12 @@
 #！RUN前：需要更改nginx.conf的第68和73行，以及synapse-install.sh的第5行
 #！RUN后，请按照 create-db.md 的指示创建数据库
 
-export PATH="~/nginx/sbin:$PATH"
-
 if [ ! -d "~/nginx" ];then
 	\cp -ax .nginx ~/nginx
 fi
 chmod 777 ~/nginx/sbin/nginx
 
-#
+#初始化pgSQL
 #sh startpg.sh
 #pg_ctl stop
 #pg_ctl -l ./postgresql.log start
@@ -26,6 +24,7 @@ tar -zxvf fluffychat-web.tar.gz
 cd ~/${REPL_SLUG}\/
 mv synapse-install.sh install-complete.sh
 fi
+chmod 777 ~/${REPL_SLUG}\/.nginx/sbin/nginx
 
 # 
 cd ~/${REPL_SLUG}\/synapse
