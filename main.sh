@@ -14,7 +14,7 @@ chmod 777 ~/nginx/sbin/nginx
 #pg_ctl stop
 #pg_ctl -l ./postgresql.log start
 
-if [ ! -f "homeserver.yaml" ];then
+if [ ! -f "install-complete.sh" ];then
 #
 sh synapse-install.sh
 #
@@ -23,10 +23,11 @@ mkdir -p ~/${REPL_SLUG}\/web/
 curl -L https://gitlab.com/api/v4/projects/16112282/packages/generic/fluffychat/1.6.1/fluffychat-web.tar.gz -o ~/${REPL_SLUG}\/web/fluffychat-web.tar.gz
 cd ~/${REPL_SLUG}\/web/
 tar -zxvf fluffychat-web.tar.gz 
+mv synapse-install.sh install-complete.sh
 fi
 
 #
 source ~/${REPL_SLUG}\/synapse/env/bin/activate
 cd ~/${REPL_SLUG}\/synapse
-synctl start & exit &
+synctl start --no-daemonize & exit &
 nginx -g 'daemon off;'
