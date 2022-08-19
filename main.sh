@@ -1,6 +1,6 @@
 #！警告：replit免费版中所有代码都是公开可见的，建议使用edu版部署
 #！RUN前：需要更改nginx.conf的第49和63行，以及synapse-install.sh的第12行
-#！RUN后，在安装Gitea前，请按照 create-db.md 的指示创建数据库
+#！RUN后，请按照 create-db.md 的指示创建数据库
 
 export PATH="~/nginx/sbin:$PATH"
 
@@ -27,8 +27,7 @@ cd
 mv synapse-install.sh install-complete.sh
 fi
 
-#
-source ~/${REPL_SLUG}\/synapse/env/bin/activate
+# 
 cd ~/${REPL_SLUG}\/synapse
-synctl start --no-daemonize & exit &
+synctl restart & exit &
 nginx -g 'daemon off;'
