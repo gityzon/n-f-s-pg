@@ -23,7 +23,7 @@ mkdir -p ~/${REPL_SLUG}\/web/
 curl -L https://gitlab.com/api/v4/projects/16112282/packages/generic/fluffychat/1.6.1/fluffychat-web.tar.gz -o ~/${REPL_SLUG}\/web/fluffychat-web.tar.gz
 cd ~/${REPL_SLUG}\/web/
 tar -zxvf fluffychat-web.tar.gz 
-cd
+cd ~/${REPL_SLUG}\/
 mv synapse-install.sh install-complete.sh
 fi
 
